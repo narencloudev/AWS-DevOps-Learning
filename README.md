@@ -1,2 +1,2 @@
-# AWS-DevOPs-Learning
+# AWS-DevOps-Learning
 Learning Resources
