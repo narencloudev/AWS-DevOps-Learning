@@ -1,6 +1,10 @@
 # AWS-DevOps-Learning
 Learning Resources
 
+**11) Complete AWS & DevOps Course:**   
+ℹ️    Docker-Zero-to-Hero, ultimate-linux-guide, aws-devops-zero-to-hero,  Jenkins-Zero-To-Hero,  terraform-zero-to-hero, nginx-zero-to-hero, devops-cloud-interview-guide, devops-interview-preparation-guide, Kubernetes-Zero-to-Hero, ansible-zero-to-hero,     
+**https://github.com/iam-veeramalla**
+
 **1) Devops-Exercises:**   
 ℹ️ DevOps Interview Questions Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization.   
 **https://github.com/bregman-arie/devops-exercises**
@@ -42,7 +46,13 @@ Learning Resources
 ℹ️  This two-week plan gives you a clear, day-by-day roadmap to get ready for a DevOps Engineer interview. It’s designed to help you cover all the important areas—from basic concepts like Linux, Networking, and Git, to hands-on practice, cloud system design, kubernetes and interview techniques.    
 **https://github.com/techiescamp/devops-interview-prep**
 
-**10) DevOps Interview Prep Plan:**   
-ℹ️  This two-week plan gives you a clear, day-by-day roadmap to get ready for a DevOps Engineer interview. It’s designed to help you cover all the important areas—from basic concepts like Linux, Networking, and Git, to hands-on practice, cloud system design, kubernetes and interview techniques.    
-**https://github.com/techiescamp/devops-interview-prep**
+**11) Devops-Roadmap:**   
+ℹ️   DevOps methodology & roadmap for a devops developer in 2019. Interesting books to learn new technologies.    
+**https://github.com/raycad/devops-roadmap**
+
+
+**11) Awesome-Learning:**   
+ℹ️   A curated list for DevOps learning resources. Join the slack channel to discuss more.    
+**https://github.com/Lets-DevOps/awesome-learning**
+
 
