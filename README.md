@@ -50,9 +50,11 @@ Learning Resources
 ℹ️   DevOps methodology & roadmap for a devops developer in 2019. Interesting books to learn new technologies.    
 **https://github.com/raycad/devops-roadmap**
 
-
 **11) Awesome-Learning:**   
 ℹ️   A curated list for DevOps learning resources. Join the slack channel to discuss more.    
 **https://github.com/Lets-DevOps/awesome-learning**
 
+**12) AWS-Devops-Projects:**   
+ℹ️   List of devops projects  
+**https://github.com/AWS-Devops-Projects**
 
