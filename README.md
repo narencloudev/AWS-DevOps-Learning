@@ -62,3 +62,8 @@ Learning Resources
 **12) AWS-Devops-Courses:**   
 ℹ️   List of devops Course from udemy  
 **https://github.com/wardviaene**
+
+
+**13) AWS-Open Guides:**   
+ℹ️   Amazon Web Services — a practical guide  
+**https://github.com/open-guides/og-aws**
