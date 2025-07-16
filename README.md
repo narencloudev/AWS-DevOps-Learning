@@ -1,7 +1,7 @@
 # AWS-DevOps-Learning
 Learning Resources
 
-**11) Complete AWS & DevOps Course:**   
+**0) Complete AWS & DevOps Course:**   
 ℹ️    Docker-Zero-to-Hero, ultimate-linux-guide, aws-devops-zero-to-hero,  Jenkins-Zero-To-Hero,  terraform-zero-to-hero, nginx-zero-to-hero, devops-cloud-interview-guide, devops-interview-preparation-guide, Kubernetes-Zero-to-Hero, ansible-zero-to-hero,     
 **https://github.com/iam-veeramalla**
 
@@ -58,3 +58,7 @@ Learning Resources
 ℹ️   List of devops projects  
 **https://github.com/AWS-Devops-Projects**
 
+
+**12) AWS-Devops-Courses:**   
+ℹ️   List of devops Course from udemy  
+**https://github.com/wardviaene**
