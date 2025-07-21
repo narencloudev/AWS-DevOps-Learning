@@ -1,3 +1,55 @@
+# 🧠 Git & Linux Commands A to Z Cheat Sheet
+
+> Everything you need to know about Git and Linux — from setup to advanced commands.
+
+---
+
+## 📚 Table of Contents
+
+### 🧠 Git Commands A–Z
+- [A. Git Configuration](#a-git-configuration)
+- [B. Initialize Repository](#b-initialize-repository)
+- [C. Clone a Repository](#c-clone-a-repository)
+- [D. Add Files](#d-add-files)
+- [E. Commit Changes](#e-commit-changes)
+- [F. View Status](#f-view-status)
+- [G. Log History](#g-log-history)
+- [H. Branching](#h-branching)
+- [I. Merge Branches](#i-merge-branches)
+- [J. Push to Remote](#j-push-to-remote)
+- [K. Pull from Remote](#k-pull-from-remote)
+- [L. Fetch Updates](#l-fetch-updates)
+- [M. Remove Files](#m-remove-files)
+- [N. Reset Changes](#n-reset-changes)
+- [O. Revert Commits](#o-revert-commits)
+- [P. Clean Up](#p-clean-up)
+- [Q. SSH Key Setup](#q-ssh-key-setup-optional)
+- [R. Stash Changes](#r-stash-changes)
+- [S. Show Changes](#s-show-changes)
+- [T. Tag a Release](#t-tag-a-release)
+- [U. Rename Branch](#u-rename-branch)
+- [V. Remote Commands](#v-remote-commands)
+- [W. Search Commits](#w-search-commits)
+- [X. Sign Commits](#x-sign-commits-gpg)
+- [Y. .gitignore Example](#y-gitignore-example)
+- [Z. Delete Branches](#z-delete-branches)
+- [✅ Tips & Best Practices](#-tips--best-practices)
+- [📚 Bonus: Git Aliases](#-bonus-aliases-for-speed)
+
+---
+
+### 🧠 Linux Commands A–Z (Grouped)
+- [🌐 NETWORKING COMMANDS](#-networking-commands)
+- [🗃️ FILE & DIRECTORY COMMANDS](#️-file--directory-commands)
+- [⚙️ SYSTEM & PROCESS COMMANDS](#️-system--process-commands)
+- [🧑‍💻 DEVOPS & SERVER COMMANDS](#-devops--server-commands)
+- [👤 USER & PERMISSION COMMANDS](#-user--permission-commands)
+- [📦 PACKAGE MANAGEMENT](#-package-management)
+- [🔀 MISCELLANEOUS ESSENTIALS](#-miscellaneous-essentials)
+- [✅ BONUS TIPS](#-bonus-tips)
+
+---
+
 # 🧠 Git Commands A to Z Cheat Sheet
 
 > Everything you need to know about Git, from setup to advanced commands.
