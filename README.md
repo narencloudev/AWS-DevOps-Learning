@@ -1,4 +1,4 @@
-# 🧠 AWS-DevOps-Learning  
+9# 🧠 AWS-DevOps-Learning  
 > A curated list of high-quality learning resources, courses, roadmaps, interview guides, and repositories to master AWS, DevOps, and related technologies.
 
 ---
@@ -151,6 +151,12 @@
 
 🔗 [og-aws (open-guides)](https://github.com/open-guides/og-aws)
 
+## 📘 16. Linux 101 Comond Book
+
+> 🔓 Open-source, community-curated guide to AWS. Super practical.
+
+🔗 [Linux Comonds](https://github.com/bobbyiliev/101-linux-commands-ebook?tab=readme-ov-file#disk-and-file-system-management)
+
 ---
 
 ## ✅ Summary: Must-Explore First
@@ -236,3 +242,7 @@ https://github.com/wardviaene
 13) AWS-Open Guides:
 ℹ️ Amazon Web Services — a practical guide
 https://github.com/open-guides/og-aws
+
+
+linux comonda
+https://github.com/bobbyiliev/101-linux-commands-ebook?tab=readme-ov-file#disk-and-file-system-management
