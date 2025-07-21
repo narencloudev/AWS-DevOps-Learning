@@ -308,3 +308,384 @@ git config --global alias.ci commit
 ## ✨ Made with ❤️ by YourGitHubUsername
 
 > Keep exploring. Keep building. 💻
+
+
+# 🧠 Linux Commands A to Z Cheat Sheet
+
+# 🧠 Linux Commands A to Z — Grouped Cheat Sheet
+
+> A categorized guide to essential Linux commands with explanations and usage contexts.
+
+---
+
+## 🌐 NETWORKING COMMANDS
+
+### 🔹 `ip`
+```bash
+ip a
+```
+📘 Shows IP addresses and interfaces  
+📍 Use for checking or configuring network interfaces.
+
+---
+
+### 🔹 `ping`
+```bash
+ping example.com
+```
+📘 Test connectivity with a server  
+📍 Basic network troubleshooting.
+
+---
+
+### 🔹 `traceroute`
+```bash
+traceroute google.com
+```
+📘 Trace the path packets take to a destination  
+📍 Diagnose routing/network path issues.
+
+---
+
+### 🔹 `netstat`
+```bash
+netstat -tulnp
+```
+📘 Lists open ports and listening services  
+📍 Identify what services are running on which ports.
+
+---
+
+### 🔹 `curl`
+```bash
+curl https://example.com
+```
+📘 Transfer data from or to a server  
+📍 Test APIs, download content, etc.
+
+---
+
+### 🔹 `wget`
+```bash
+wget https://example.com/file.zip
+```
+📘 Download files from the web  
+📍 Useful in scripts for automated downloads.
+
+---
+
+## 🗃️ FILE & DIRECTORY COMMANDS
+
+### 🔹 `ls`
+```bash
+ls -lah
+```
+📘 List directory contents with details  
+📍 Everyday file navigation.
+
+---
+
+### 🔹 `cp`
+```bash
+cp source.txt destination.txt
+```
+📘 Copy files and folders  
+📍 Backup or duplicate files.
+
+---
+
+### 🔹 `mv`
+```bash
+mv file.txt /path/
+```
+📘 Move or rename files  
+📍 Organize directories or rename files.
+
+---
+
+### 🔹 `rm`
+```bash
+rm file.txt
+rm -rf folder/
+```
+📘 Delete files or directories  
+📍 Clean up files — use with caution!
+
+---
+
+### 🔹 `find`
+```bash
+find / -name "*.log"
+```
+📘 Search for files  
+📍 Locate files by name/type anywhere on the system.
+
+---
+
+### 🔹 `du`
+```bash
+du -sh *
+```
+📘 Show disk usage  
+📍 Find out which folders use the most space.
+
+---
+
+### 🔹 `df`
+```bash
+df -h
+```
+📘 Display disk free space  
+📍 Monitor storage usage per mount point.
+
+---
+
+## ⚙️ SYSTEM & PROCESS COMMANDS
+
+### 🔹 `top`
+```bash
+top
+```
+📘 Real-time process and resource monitor  
+📍 Monitor CPU, memory, running processes.
+
+---
+
+### 🔹 `ps`
+```bash
+ps aux
+```
+📘 Show running processes  
+📍 List everything currently executing.
+
+---
+
+### 🔹 `kill`
+```bash
+kill -9 PID
+```
+📘 Terminate a process by PID  
+📍 End stuck or misbehaving processes.
+
+---
+
+### 🔹 `htop`
+```bash
+htop
+```
+📘 Interactive process viewer (like `top` but better)  
+📍 Easier to use with color and mouse support.
+
+---
+
+### 🔹 `uptime`
+```bash
+uptime
+```
+📘 Show how long the system has been running  
+📍 Good for checking system stability.
+
+---
+
+## 🧑‍💻 DEVOPS & SERVER COMMANDS
+
+### 🔹 `systemctl`
+```bash
+sudo systemctl restart nginx
+```
+📘 Control services (start, stop, restart)  
+📍 Used to manage services like Apache, Nginx, MySQL.
+
+---
+
+### 🔹 `journalctl`
+```bash
+journalctl -xe
+```
+📘 View systemd logs  
+📍 Debug services managed by `systemd`.
+
+---
+
+### 🔹 `crontab`
+```bash
+crontab -e
+```
+📘 Edit user cron jobs  
+📍 Schedule tasks/scripts to run at intervals.
+
+---
+
+### 🔹 `ssh`
+```bash
+ssh user@hostname
+```
+📘 Remote login via secure shell  
+📍 Manage remote Linux servers.
+
+---
+
+### 🔹 `scp`
+```bash
+scp file.txt user@host:/path/
+```
+📘 Securely copy files over SSH  
+📍 Deploy code/files to remote machines.
+
+---
+
+### 🔹 `rsync`
+```bash
+rsync -avz file user@host:/path/
+```
+📘 Sync files/directories between machines  
+📍 Used in backup, deployment, or mirroring.
+
+---
+
+## 👤 USER & PERMISSION COMMANDS
+
+### 🔹 `chmod`
+```bash
+chmod 755 script.sh
+```
+📘 Change file permissions  
+📍 Make scripts executable, set security levels.
+
+---
+
+### 🔹 `chown`
+```bash
+chown user:group file.txt
+```
+📘 Change file ownership  
+📍 Fix permission issues across users.
+
+---
+
+### 🔹 `adduser` / `useradd`
+```bash
+sudo adduser newuser
+```
+📘 Add a new user  
+📍 Grant login access or isolate environments.
+
+---
+
+### 🔹 `passwd`
+```bash
+passwd username
+```
+📘 Change a user’s password  
+📍 Reset passwords securely.
+
+---
+
+## 📦 PACKAGE MANAGEMENT
+
+### 🔹 `apt` (Debian/Ubuntu)
+```bash
+sudo apt update && sudo apt upgrade
+sudo apt install nginx
+```
+📘 Manage packages  
+📍 Install, update, upgrade software.
+
+---
+
+### 🔹 `dnf` / `yum` (RHEL/Fedora)
+```bash
+sudo dnf install httpd
+```
+📘 Install packages on RPM-based systems  
+📍 RHEL/CentOS/Fedora users.
+
+---
+
+### 🔹 `snap`
+```bash
+snap install --classic code
+```
+📘 Universal Linux packages  
+📍 For sandboxed, cross-distro apps.
+
+---
+
+## 🔀 MISCELLANEOUS ESSENTIALS
+
+### 🔹 `man`
+```bash
+man rsync
+```
+📘 View help/manual for a command  
+📍 Learn options and usage examples.
+
+---
+
+### 🔹 `alias`
+```bash
+alias ll='ls -lah'
+```
+📘 Create custom shortcuts  
+📍 Speed up common tasks.
+
+---
+
+### 🔹 `uname`
+```bash
+uname -a
+```
+📘 Show system info  
+📍 Kernel, OS version, architecture.
+
+---
+
+### 🔹 `echo`
+```bash
+echo $HOME
+```
+📘 Print to terminal  
+📍 Show environment variables or test output.
+
+---
+
+### 🔹 `tar`
+```bash
+tar -czvf archive.tar.gz folder/
+```
+📘 Archive and compress files  
+📍 Create backups or compress logs.
+
+---
+
+### 🔹 `whoami`
+```bash
+whoami
+```
+📘 Display current username  
+📍 Confirm active user in terminal.
+
+---
+
+### 🔹 `uptime`
+```bash
+uptime
+```
+📘 Show how long the system has been running  
+📍 Monitor server health.
+
+---
+
+## ✅ BONUS TIPS
+
+- `sudo !!` – Rerun last command with sudo  
+- `Ctrl + R` – Reverse history search  
+- `&&` – Run second command only if first succeeds  
+- `>` / `>>` – Redirect output (overwrite/append)  
+- `|` – Pipe output to next command
+
+---
+
+## ✨ Made with ❤️ by YourLinuxDoc
+
+> Use, fork, and improve! Happy Hacking 🐧
