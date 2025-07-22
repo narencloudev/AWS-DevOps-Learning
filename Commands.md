@@ -56,7 +56,7 @@
 
 ---
 
-## 🔧 A. Git Configuration
+## A. Git Configuration
 
 ```bash
 git config --global user.name "Your Name"
