@@ -1,295 +1,215 @@
-Perfect. Below is a deep, complete .md README covering Linux, Git, Jenkins, and Docker, with all commands inside bash blocks for single-click copy. Each command is explained with syntax, usage, and description — and internal links are provided for easy navigation.
+# 🐧 Linux Commands A-Z by Category
 
-You can copy-paste this entire block as a single README.md.
-
-
----
-
-# 💻 DevOps Master Cheatsheet: Linux + Git + Jenkins + Docker
-
-A full command reference with syntax, usage, and explanation — ideal for beginners to advanced DevOps professionals.
+A practical, categorized reference for essential Linux commands.  
+For each command, find the **description** and **syntax** for quick use and learning.
 
 ---
 
-## 📚 Table of Contents
+## 📁 1. File & Directory Management
 
-- [🧑‍💻 Linux](#-linux)
-  - [📁 File & Directory](#️file--directory)
-  - [👥 User & Permissions](#user--permissions)
-  - [🌐 Networking](#networking)
-  - [🧠 System & Processes](#system--processes)
-  - [📦 Package Management](#package-management)
-  - [🧰 Shell & Utilities](#shell--utilities)
-
-- [🔧 Git](#-git)
-  - [⚙️ Setup & Config](#️setup--config)
-  - [📁 Repo Basics](#repo-basics)
-  - [🌿 Branching & Merging](#branching--merging)
-  - [🌍 Remote Operations](#remote-operations)
-  - [🧪 Advanced Git](#advanced-git)
-
-- [🧰 Jenkins](#-jenkins)
-  - [🛠️ Install & Start](#install--start)
-  - [🚦 Jobs & Pipelines](#jobs--pipelines)
-  - [🔌 Plugins](#plugins)
-  - [🔐 Security](#security)
-  - [💻 CLI](#cli)
-
-- [🐳 Docker](#-docker)
-  - [🔧 Install & Setup](#install--setup)
-  - [📦 Images & Containers](#images--containers)
-  - [🗂️ Volumes & Networks](#volumes--networks)
-  - [🛠️ Dockerfile & Build](#dockerfile--build)
-  - [📜 Docker Compose](#docker-compose)
-  - [🧠 Docker Tips](#docker-tips)
+| Command   | Description                              | Syntax / Example               |
+|-----------|------------------------------------------|-------------------------------|
+| `ls`      | List directory contents                  | `ls -l /path/to/dir`          |
+| `pwd`     | Print working directory                  | `pwd`                         |
+| `cd`      | Change current directory                 | `cd /var/log`                 |
+| `mkdir`   | Create new directory                     | `mkdir foldername`            |
+| `rmdir`   | Remove empty directory                   | `rmdir foldername`            |
+| `rm`      | Remove files or directories              | `rm -rf file.txt foldername/` |
+| `cp`      | Copy files or directories                | `cp file1.txt /home/`         |
+| `mv`      | Move or rename files/directories         | `mv old.txt new.txt`          |
+| `find`    | Search for files & dirs recursively      | `find /home -name "*.txt"`    |
+| `touch`   | Create empty file or update timestamp    | `touch file.txt`              |
+| `cat`     | Display file contents                    | `cat file.txt`                |
+| `more`    | View file contents (paged)               | `more file.txt`               |
+| `less`    | View file contents with navigation       | `less file.txt`               |
+| `head`    | Show first lines of a file               | `head -n 10 file.txt`         |
+| `tail`    | Show last lines of a file                | `tail -n 10 file.txt`         |
+| `ln`      | Create links (hard/symbolic)             | `ln -s src.txt link.txt`      |
+| `tree`    | Display directory tree                   | `tree /home/user`             |
 
 ---
 
-## 🧑‍💻 Linux
+## 📝 2. Text Processing
 
-### 📁 File & Directory
-
-```bash
-ls -lah             # List all files with human-readable sizes
-cd /path/to/dir     # Change directory
-pwd                 # Print current working directory
-mkdir new_folder    # Create a new directory
-touch file.txt      # Create a new empty file
-cp source dest      # Copy file or folder
-mv old new          # Move or rename file
-rm file.txt         # Remove file
-rm -rf folder       # Remove folder recursively and forcefully
-find . -name "*.sh" # Find all .sh files from current dir
-du -sh *            # Show sizes of folders/files in human format
-df -h               # Show disk space usage
-
-👥 User & Permissions
-
-whoami                     # Show current user
-id                         # Show UID, GID, groups
-adduser username           # Add new user
-passwd username            # Set/change user password
-chmod 755 file.sh          # Set file permissions (rwxr-xr-x)
-chown user:group file      # Change file ownership
-groups                     # List groups for current user
-
-🌐 Networking
-
-ip a                       # Show IP addresses
-ping google.com            # Test network connectivity
-traceroute example.com     # Show route to host
-netstat -tulnp             # Show active listening ports
-ss -tuln                   # Replacement for netstat
-curl ifconfig.me           # Get public IP address
-wget http://example.com    # Download file from URL
-
-🧠 System & Processes
-
-ps aux                     # Show running processes
-top                        # Realtime process viewer
-htop                       # Interactive process viewer (better top)
-kill -9 <PID>              # Force kill process
-free -h                    # Show memory usage
-uptime                     # Show system uptime
-uname -a                   # Show OS kernel info
-reboot                     # Restart the system
-shutdown now               # Shutdown immediately
-
-📦 Package Management
-
-Ubuntu / Debian:
-
-sudo apt update                  # Update packages index
-sudo apt upgrade -y             # Upgrade all packages
-sudo apt install nginx -y       # Install package
-sudo apt remove nginx -y        # Uninstall package
-sudo apt autoremove             # Remove unused packages
-
-RHEL / Fedora:
-
-sudo dnf install httpd -y       # Install Apache server
-sudo yum install vim -y         # Install VIM editor
-sudo dnf remove httpd -y        # Remove package
-sudo dnf autoremove             # Clean up
-
-🧰 Shell & Utilities
-
-man ls                          # Show manual for command
-alias ll='ls -lh'               # Create alias
-history                         # View command history
-echo $HOME                      # Print environment variable
-export VAR=value                # Set environment variable
-tar -czvf file.tar.gz folder/  # Archive folder to tar.gz
-
+| Command   | Description                                | Syntax / Example                   |
+|-----------|--------------------------------------------|------------------------------------|
+| `grep`    | Search for patterns in files               | `grep "word" file.txt`             |
+| `awk`     | Pattern scanning and reporting             | `awk '{print $1}' file.txt`        |
+| `sed`     | Stream editing text                        | `sed 's/old/new/g' file.txt`       |
+| `cut`     | Remove sections from each line             | `cut -d ':' -f1 /etc/passwd`       |
+| `sort`    | Sort lines of text files                   | `sort file.txt`                    |
+| `uniq`    | Report or filter duplicate lines           | `uniq file.txt`                    |
+| `wc`      | Word, line, and character count            | `wc -l file.txt`                   |
+| `paste`   | Merge lines of files                       | `paste file1.txt file2.txt`        |
+| `join`    | Join lines of two files on a field         | `join a.txt b.txt`                 |
 
 ---
 
-🔧 Git
+## 🔑 3. User & Permission Management
 
-⚙️ Setup & Config
-
-git config --global user.name "Your Name"     # Set your Git name
-git config --global user.email "email@host"   # Set your email
-git config --list                             # List all configs
-
-📁 Repo Basics
-
-git init                         # Initialize a new repo
-git clone <repo-url>             # Clone remote repo
-git status                       # Show status of files
-git add .                        # Stage all changes
-git commit -m "msg"              # Commit staged changes
-git log                          # Show commit history
-git diff                         # Show changes not staged
-
-🌿 Branching & Merging
-
-git branch                       # List branches
-git branch new-feature           # Create new branch
-git checkout new-feature         # Switch to branch
-git checkout -b feature-x        # Create and switch
-git merge feature-x              # Merge branch to current
-git branch -d feature-x          # Delete branch
-
-🌍 Remote Operations
-
-git remote -v                              # Show remote repos
-git remote add origin <url>                # Add remote repo
-git push -u origin main                    # Push code to main
-git pull origin main                       # Pull from remote
-git fetch                                  # Get latest metadata
-
-🧪 Advanced Git
-
-git stash                                  # Save uncommitted changes
-git stash pop                              # Reapply stashed changes
-git reset --hard HEAD~1                    # Reset last commit
-git revert <commit>                        # Create revert commit
-git cherry-pick <commit>                   # Apply commit from elsewhere
-
+| Command       | Description                                        | Syntax / Example                    |
+|---------------|----------------------------------------------------|-------------------------------------|
+| `sudo`        | Execute as another user, usually root              | `sudo apt update`                   |
+| `useradd`     | Add new user                                       | `sudo useradd alice`                |
+| `userdel`     | Delete user                                        | `sudo userdel alice`                |
+| `usermod`     | Modify user account                                | `sudo usermod -aG sudo alice`       |
+| `passwd`      | Change user password                               | `passwd`                            |
+| `chown`       | Change ownership of file/directory                  | `chown user:group file.txt`         |
+| `chmod`       | Change permissions                                 | `chmod 755 script.sh`               |
+| `groups`      | Show group memberships                             | `groups alice`                      |
+| `su`          | Switch user                                        | `su alice`                          |
+| `id`          | Show current user & group ID                       | `id`                                |
 
 ---
 
-🧰 Jenkins
+## 🔒 4. Process & System Monitoring
 
-🛠️ Install & Start
-
-sudo apt update
-sudo apt install openjdk-11-jdk -y
-wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
-sudo apt update
-sudo apt install jenkins -y
-sudo systemctl start jenkins
-sudo systemctl enable jenkins
-
-Access Jenkins: http://localhost:8080
-
-🚦 Jobs & Pipelines
-
-# Example Jenkins Declarative Pipeline
-pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Building...'
-      }
-    }
-    stage('Test') {
-      steps {
-        echo 'Testing...'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Deploying...'
-      }
-    }
-  }
-}
-
-🔌 Plugins
-
-# Manage Jenkins > Plugin Manager
-# Or CLI:
-java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin git workflow-aggregator docker-plugin
-
-🔐 Security
-
-# UI: Manage Jenkins > Configure Global Security
-# Enable security, setup users, disable anonymous access
-
-💻 CLI
-
-java -jar jenkins-cli.jar -s http://localhost:8080/ help
-java -jar jenkins-cli.jar -s http://localhost:8080/ list-jobs
-java -jar jenkins-cli.jar -s http://localhost:8080/ build job-name
-
+| Command    | Description                             | Syntax / Example            |
+|------------|-----------------------------------------|----------------------------|
+| `ps`       | List running processes                  | `ps aux`                   |
+| `top`      | Live system process monitoring          | `top`                      |
+| `htop`     | Improved, colorful top                  | `htop`                     |
+| `kill`     | Kill a process by PID                   | `kill 1234`                |
+| `killall`  | Kill processes by name                  | `killall firefox`          |
+| `jobs`     | List active jobs                        | `jobs`                     |
+| `bg`       | Resume suspended job in background      | `bg %1`                    |
+| `fg`       | Bring background job to foreground      | `fg %1`                    |
+| `uptime`   | Show how long system's been running     | `uptime`                   |
+| `free`     | Show memory usage                       | `free -h`                  |
+| `df`       | Show disk usage                         | `df -h`                    |
+| `du`       | Disk usage of files & directories       | `du -sh /home/user/`       |
+| `vmstat`   | Report virtual memory statistics        | `vmstat 1`                 |
+| `iostat`   | Report CPU and IO stats                 | `iostat`                   |
+| `lsof`     | List open files                         | `lsof`                     |
+| `dmesg`    | Kernel ring buffer messages             | `dmesg | less`             |
 
 ---
 
-🐳 Docker
+## 🌐 5. Networking
 
-🔧 Install & Setup
-
-sudo apt update
-sudo apt install docker.io -y
-sudo systemctl start docker
-sudo systemctl enable docker
-docker --version
-
-📦 Images & Containers
-
-docker pull nginx                      # Pull image
-docker images                          # List images
-docker run -d -p 8080:80 nginx         # Run container in background
-docker ps -a                           # List containers
-docker exec -it <id> bash              # Enter running container
-docker stop <id>                       # Stop container
-docker rm <id>                         # Remove container
-docker rmi <id>                        # Remove image
-
-🗂️ Volumes & Networks
-
-docker volume create myvol             # Create volume
-docker network create mynet            # Create network
-docker run -v myvol:/data --network=mynet nginx
-
-🛠️ Dockerfile & Build
-
-# Dockerfile Example
-FROM node:alpine
-WORKDIR /app
-COPY . .
-RUN npm install
-CMD ["npm", "start"]
-
-docker build -t myapp .
-docker run -p 3000:3000 myapp
-
-📜 Docker Compose
-
-# docker-compose.yml
-version: "3"
-services:
-  web:
-    image: nginx
-    ports:
-      - "8080:80"
-
-docker-compose up -d
-docker-compose down
-
-🧠 Docker Tips
-
-docker logs <container>               # Show logs
-docker inspect <container>            # Show low-level info
-docker stats                          # Resource usage
-docker system prune -a                # Remove all unused images/containers
-
+| Command     | Description                                   | Syntax / Example                  |
+|-------------|-----------------------------------------------|-----------------------------------|
+| `ping`      | Test reachability of a host                   | `ping google.com`                 |
+| `ifconfig`  | Show network interfaces (deprecated)          | `ifconfig`                        |
+| `ip`        | Show/manipulate routing, network interfaces   | `ip a`                            |
+| `netstat`   | Network connections, tables, statistics       | `netstat -tuln`                   |
+| `ss`        | Another utility to investigate sockets        | `ss -tuln`                        |
+| `traceroute`| Trace the route to a network host             | `traceroute example.com`          |
+| `nslookup`  | Query DNS                                    | `nslookup example.com`            |
+| `wget`      | Download files via HTTP, FTP                  | `wget http://site.com/file.zip`   |
+| `curl`      | Transfer data from/to a server                | `curl -O http://site.com/file.zip`|
+| `scp`       | Secure copy over SSH                          | `scp file.txt user@host:/tmp/`    |
+| `ssh`       | Remote login via SSH                          | `ssh user@192.168.1.10`           |
+| `ftp`       | File Transfer Protocol client                 | `ftp ftp.site.com`                |
+| `sftp`      | Secure FTP (over SSH)                         | `sftp user@host`                  |
+| `nc`        | Netcat for network debugging                  | `nc -zv example.com 80`           |
+| `nmcli`     | NetworkManager command-line tool              | `nmcli device status`             |
 
 ---
 
-Would you like me to add a version with emojis/icons for UI clarity, or keep it terminal-pure like above?
+## 🔍 6. System Information
 
+| Command      | Description                           | Syntax / Example                  |
+|--------------|---------------------------------------|-----------------------------------|
+| `uname`      | System info (kernel, hardware)        | `uname -a`                        |
+| `arch`       | Show CPU architecture                 | `arch`                            |
+| `hostname`   | Display or set hostname               | `hostname`                        |
+| `date`       | Display/set system date/timestamp     | `date "+%Y-%m-%d %H:%M:%S"`       |
+| `whoami`     | Print current user                    | `whoami`                          |
+| `uptime`     | How long system’s been running        | `uptime`                          |
+| `man`        | Read manual for a command             | `man ls`                          |
+| `whatis`     | Short description of a command        | `whatis ls`                       |
+| `info`       | Read info docs                        | `info coreutils`                  |
+| `history`    | Command history                       | `history`                         |
+
+---
+
+## 🔄 7. Archiving & Compression
+
+| Command    | Description                         | Syntax / Example                    |
+|------------|-------------------------------------|-------------------------------------|
+| `tar`      | Archive files                       | `tar -cvf archive.tar files/`       |
+| `gzip`     | Compress files                      | `gzip file.txt`                     |
+| `gunzip`   | Decompress .gz file                 | `gunzip file.txt.gz`                |
+| `zip`      | Compress, add to .zip archive       | `zip archive.zip file.txt`          |
+| `unzip`    | List/test/extract zip archives      | `unzip archive.zip`                 |
+| `bzip2`    | Higher compression (than gzip)      | `bzip2 file.txt`                    |
+| `xz`       | Compress with LZMA algorithm        | `xz file.txt`                       |
+
+---
+
+## 🗝️ 8. Package Management
+
+| Command      | Description                                | Syntax / Example                  |
+|--------------|--------------------------------------------|-----------------------------------|
+| `apt-get`    | Debian/Ubuntu: Install/manage packages     | `sudo apt-get install git`        |
+| `apt`        | Modern tool for APT systems                | `sudo apt update`                 |
+| `yum`        | Fedora/RedHat: Package management          | `sudo yum install git`            |
+| `dnf`        | Modern Fedora package manager              | `sudo dnf update`                 |
+| `zypper`     | OpenSUSE package management                | `sudo zypper install git`         |
+| `snap`       | Install/manage snap packages               | `sudo snap install htop`          |
+| `rpm`        | Manage rpm packages                        | `sudo rpm -i package.rpm`         |
+| `dpkg`       | Manage deb packages                        | `sudo dpkg -i package.deb`        |
+| `pip`        | Python package manager                     | `pip install requests`            |
+
+---
+
+## ⚙️ 9. System Boot & Shutdown
+
+| Command       | Description                             | Syntax / Example                |
+|---------------|-----------------------------------------|---------------------------------|
+| `reboot`      | Reboot the system                       | `sudo reboot`                   |
+| `shutdown`    | Shutdown/poweroff                       | `sudo shutdown now`             |
+| `halt`        | Stop all CPUs (system halt)             | `sudo halt`                     |
+| `init`        | Change runlevel/initiate shutdown        | `sudo init 0`                   |
+| `systemctl`   | Manage systemd services & boot          | `systemctl restart sshd`        |
+
+---
+
+## 🧰 10. Miscellaneous Utilities
+
+| Command    | Description                         | Syntax / Example                      |
+|------------|-------------------------------------|---------------------------------------|
+| `echo`     | Print message to terminal           | `echo "Hello, world!"`                |
+| `alias`    | Make or view command aliases        | `alias ll='ls -l'`                    |
+| `unalias`  | Remove command alias                | `unalias ll`                          |
+| `clear`    | Clear terminal screen               | `clear`                               |
+| `time`     | Measure running time of commands    | `time ls`                             |
+| `sleep`    | Pause for specified seconds         | `sleep 5`                             |
+| `watch`    | Periodically run command            | `watch -n 2 df -h`                    |
+| `export`   | Set environment variable            | `export PATH=$PATH:/opt/bin`          |
+
+---
+
+## 🎓 Linux Command Syntax Basics
+
+**General form:**  
+- **command:** Name of the utility (e.g., `ls`)
+- **options:** Modify the behavior, often with `-` or `--` (e.g., `ls -l`)
+- **arguments:** Targets or values to operate on (e.g., `ls /home`)
+
+**Standard for help:**
+- `command -h` or `command --help` shows usage and options.
+- `man command` displays the manual entry for deeper info[7][4].
+
+---
+
+## 📚 Reference
+
+- [Linux Handbook: A to Z Linux Commands][1]
+- [GeeksforGeeks: Linux Commands][2]
+- [Tecmint: Linux Commands Sheet][3]
+- [DigitalOcean: Linux Commands Guide][4]
+- [Thomas-Krenn: Command Syntax][7]
+- [Hostinger: 60 Essential Linux Commands][6]
+
+---
+> Bookmark or contribute to this list for your next Linux pro
+> ject!
+>
+: https://linuxhandbook.com/a-to-z-linux-commands/
+: https://www.geeksforgeeks.org/linux-unix/linux-commands/
+: https://www.tecmint.com/linux-commands-cheat-sheet/
+: https://www.digitalocean.com/community/tutorials/linux-commands
+: https://www.hostinger.com/in/tutorials/linux-commands
+: https://www.thomas-krenn.com/en/wiki/Linux_Commands
