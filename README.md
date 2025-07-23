@@ -1,4 +1,4 @@
-9# 🧠 AWS-DevOps-Learning  
+# 🧠 AWS-DevOps-Learning  
 > A curated list of high-quality learning resources, courses, roadmaps, interview guides, and repositories to master AWS, DevOps, and related technologies.
 
 ---
