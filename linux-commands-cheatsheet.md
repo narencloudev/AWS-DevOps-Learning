@@ -213,3 +213,174 @@ For each command, find the **description** and **syntax** for quick use and lear
 : https://www.digitalocean.com/community/tutorials/linux-commands
 : https://www.hostinger.com/in/tutorials/linux-commands
 : https://www.thomas-krenn.com/en/wiki/Linux_Commands
+
+
+
+
+
+# 🐧 Linux Commands A to Z – Grouped by Category
+
+> A categorized reference of Linux commands with syntax and usage.
+
+---
+
+## 📁 1. File & Directory Management
+
+| Command | Description |
+|--------|-------------|
+| `ls` | List files in a directory |
+| `cd` | Change directory |
+| `pwd` | Show current path |
+| `mkdir` | Make new directory |
+| `rm` | Remove file or directory |
+| `touch` | Create empty file |
+| `cp` | Copy files/directories |
+| `mv` | Move or rename files/directories |
+| `find` | Search for files |
+| `stat` | Display file metadata |
+
+---
+
+## 🌐 2. Networking
+
+| Command | Description |
+|--------|-------------|
+| `ping` | Test network connection |
+| `ifconfig` / `ip a` | Show IP and network interfaces |
+| `traceroute` | Show packet path to a host |
+| `netstat -tulpn` | Show listening ports |
+| `ss -tuln` | Replacement for netstat |
+| `curl` | Transfer data from URLs |
+| `wget` | Download from web |
+| `nslookup` | DNS lookup |
+| `dig` | Detailed DNS queries |
+| `scp` | Secure file transfer |
+| `ssh` | Connect to remote machine securely |
+
+---
+
+## ⚙️ 3. System Monitoring
+
+| Command | Description |
+|--------|-------------|
+| `top` / `htop` | Show running processes |
+| `ps aux` | List all processes |
+| `uptime` | Show system uptime |
+| `vmstat` | Virtual memory stats |
+| `iostat` | CPU and disk usage |
+| `free -h` | Show RAM usage |
+| `df -h` | Show disk usage |
+| `du -sh` | Show directory size |
+| `dmesg` | Show boot logs |
+
+---
+
+## 🧰 4. Package Management
+
+### Ubuntu/Debian
+
+| Command | Description |
+|--------|-------------|
+| `apt update` | Refresh package lists |
+| `apt upgrade` | Upgrade installed packages |
+| `apt install <pkg>` | Install a package |
+| `apt remove <pkg>` | Remove a package |
+
+### RHEL/CentOS/Fedora
+
+| Command | Description |
+|--------|-------------|
+| `dnf install <pkg>` | Install a package |
+| `dnf remove <pkg>` | Remove a package |
+| `dnf update` | Update packages |
+| `yum` | Older package manager (still works) |
+
+---
+
+## 🧑‍💻 5. User & Permission Management
+
+| Command | Description |
+|--------|-------------|
+| `adduser` / `useradd` | Add new user |
+| `passwd` | Change password |
+| `usermod` | Modify user |
+| `id` | Show user/group IDs |
+| `chown` | Change file owner |
+| `chmod` | Change file permission |
+| `groups` | Show group membership |
+| `sudo` | Run command as root |
+
+---
+
+## 📦 6. Archiving & Compression
+
+| Command | Description |
+|--------|-------------|
+| `tar -cvf` | Create archive |
+| `tar -xvf` | Extract archive |
+| `zip` | Compress files |
+| `unzip` | Extract zip file |
+| `gzip` | Compress files |
+| `gunzip` | Decompress gzip files |
+
+---
+
+## 🧪 7. DevOps & Containers
+
+| Command | Description |
+|--------|-------------|
+| `docker ps` | List running containers |
+| `docker images` | List images |
+| `docker run` | Run a new container |
+| `docker build` | Build an image |
+| `systemctl` | Manage system services |
+| `journalctl` | System logs viewer |
+| `crontab -e` | Schedule jobs |
+| `kubectl get pods` | K8s pods |
+| `terraform apply` | Terraform deploy |
+| `ansible-playbook` | Run Ansible playbook |
+
+---
+
+## 🧮 8. Disk & Partition
+
+| Command | Description |
+|--------|-------------|
+| `lsblk` | List block devices |
+| `blkid` | Show UUID of devices |
+| `mount` / `umount` | Mount/Unmount disk |
+| `fdisk` | Partition management |
+| `parted` | Advanced disk partitioning |
+| `mkfs.ext4` | Format disk |
+
+---
+
+## 🔐 9. Security & Permissions
+
+| Command | Description |
+|--------|-------------|
+| `chmod` | Change permissions |
+| `chown` | Change ownership |
+| `ufw` | Firewall in Ubuntu |
+| `firewalld` | RHEL/CentOS firewall |
+| `ssh-keygen` | Generate SSH keys |
+| `gpg` | Encrypt/decrypt data |
+
+---
+
+## 🛠️ 10. Miscellaneous
+
+| Command | Description |
+|--------|-------------|
+| `alias` | Shortcut for commands |
+| `history` | Show command history |
+| `echo` | Print text |
+| `date` | Show date/time |
+| `whoami` | Current user |
+| `uname -a` | System info |
+| `reboot` | Restart system |
+| `shutdown now` | Power off |
+
+---
+
+📁 Save this as `linux-commands-cheatsheet.md` and keep it handy!
