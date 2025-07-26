@@ -131,7 +131,3 @@ Advance your skills to become a **Cloud DevOps Architect**, **Platform Engineer*
 - [Argo CD Docs](https://argo-cd.readthedocs.io/)
 - YouTube: TechWorld with Nana, Bret Fisher
 - Books: "Kubernetes Up & Running", "Terraform Up & Running"
-
----
-
-> 💬 **Want a Notion board or PDF export? Let me know!**
