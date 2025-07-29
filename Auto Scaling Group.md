@@ -35,7 +35,7 @@ for chaecking load balancer working fine or not
 copy DNS run in browser  
 
 
-
+change ec2 code to see the diffference oc ec2 servers websites 
 
 
 
