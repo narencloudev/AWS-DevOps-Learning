@@ -31,6 +31,9 @@ in target group select all instance and peniding below then launch
 
 create loadbalance select atleast 2 subnets  > create load balancer  
 
+for chaecking load balancer working fine or not  
+copy DNS run in browser  
+
 
 
 
