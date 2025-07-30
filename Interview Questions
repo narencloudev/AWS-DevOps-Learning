@@ -1,0 +1,205 @@
+EC2 (Elastic Compute Cloud)
+
+1. You launched an EC2 instance but can’t SSH into it.
+When I can’t SSH into an EC2 instance, I first verify the security group to ensure port 22 is open for my IP. I also make sure I’m using the correct key pair and that the instance has a public IP address or is in a public subnet with proper routing. If all looks fine but SSH still fails, I use EC2 Serial Console or SSM Session Manager to troubleshoot from within.
+
+2. An EC2 instance is consuming 100% CPU—how do you troubleshoot it?
+I log in using SSH or Session Manager and use tools like top or htop to identify the process causing high CPU. I also check CloudWatch metrics for trends, review application logs, and depending on findings, I may restart the application, optimize code, or scale the instance vertically or horizontally.
+
+3. Your instance needs more disk space—how do you handle it without data loss?
+I use Elastic Volumes to resize the existing volume from the console. Then I log into the instance and expand the file system using commands like growpart and resize2fs to utilize the new space without stopping the instance or risking data loss.
+
+4. You need to schedule EC2 stop/start every night and morning—how?
+I use Amazon EventBridge with cron expressions to create rules that trigger Lambda functions or SSM documents. These handle stopping the instance at night and starting it in the morning automatically, reducing costs during off-hours.
+
+5. An EC2 instance was accidentally terminated. How do you recover it?
+If I had taken a snapshot or created an AMI, I simply launch a new instance from that backup. I reattach any preserved data volumes and reconfigure network and security settings as needed to restore the environment.
+
+6. You're deploying a web app, but it's not accessible—what steps to check?
+I first check that the security group allows HTTP/HTTPS traffic and that the instance is in a public subnet with a route to the Internet Gateway. I also ensure the web server is running and the application is listening on the correct port and IP.
+
+7. You want to take regular backups of an EC2 instance—how would you do this?
+I configure AWS Data Lifecycle Manager to take scheduled snapshots of the instance volumes. For full image backups, I also create AMIs periodically, which can be automated using Lambda or SSM as needed.
+
+8. How do you create a highly available EC2 architecture across AZs?
+I set up an Auto Scaling Group with instances launched in multiple Availability Zones. These instances are registered behind an Elastic Load Balancer to distribute traffic and maintain availability even if one AZ goes down.
+
+9. You want to run a script at instance boot time—how do you set that up?
+I include the script in the EC2 user data field during launch. For more flexibility and reusability, I sometimes use cloud-init or configure a systemd service to run custom scripts during startup.
+
+10. You want to share an AMI with another AWS account—what’s the process?
+I modify the AMI permissions to allow the target AWS account to launch instances from it. If the AMI is encrypted, I also share the KMS key. Optionally, I can use the CLI to copy the AMI to their account.
+
+S3 (Simple Storage Service)
+
+11. A user uploaded sensitive data to a public bucket—how do you respond?
+I immediately remove public access by adjusting the bucket policy and ACL. Then I use Amazon Macie to assess any sensitive data exposure and rotate credentials if needed. Finally, I review and remediate any compliance or audit concerns.
+
+12. You want to give temporary upload access to a client—how?
+I create a pre-signed URL for PUT operations, which allows the client to upload a file directly to the S3 bucket for a limited time without needing AWS credentials.
+
+13. Your S3 costs suddenly spiked—how do you investigate?
+I enable and review S3 Storage Lens or AWS Cost Explorer to identify which buckets or operations increased costs. Then I check for unusually large uploads, replication traffic, or Glacier retrievals, and set up lifecycle rules if needed.
+
+14. You need to archive old files from S3 to Glacier—what’s the best way?
+I configure lifecycle rules on the S3 bucket to transition objects to Glacier or Deep Archive after a certain number of days. This is automated and cost-effective for infrequent access data.
+
+15. Someone complains of “Access Denied” when accessing a file—how to debug?
+I check the bucket policy, object ACLs, and IAM user permissions. I use the IAM Policy Simulator and S3 Access Analyzer to identify which part of the policy is denying access.
+
+16. You need to enable versioning and lifecycle rules—why and how?
+I enable versioning to preserve every version of an object, which is crucial for recovery. Then I add lifecycle rules to automatically delete older versions or transition them to Glacier, reducing storage costs.
+
+17. You want only a specific Lambda function to access a folder in S3—how?
+I create a resource-based policy or bucket policy allowing access only to the Lambda execution role and limiting the action to the specified prefix (folder path) in the S3 bucket.
+
+18. You want to prevent accidental deletion of critical files—what to do?
+I enable bucket versioning and MFA Delete. I also apply a policy denying s3:DeleteObject unless MFA is used, and restrict delete permissions in IAM policies.
+
+19. How do you securely serve S3 content via a custom domain?
+I use Amazon CloudFront with an SSL certificate and configure it to point to the S3 bucket as the origin. I restrict bucket access using an origin access control (OAC) or signed URLs for private content.
+
+20. You want to replicate data between two buckets in different regions—how?
+I enable Cross-Region Replication (CRR) by setting a replication configuration on the source bucket, assigning the correct IAM role, and ensuring versioning is enabled on both source and destination buckets.
+
+IAM (Identity & Access Management)
+
+21. A developer can't access S3 despite having GetObject—why?
+I would first verify if a bucket policy or a service control policy is overriding their IAM permissions. Even if the IAM policy allows s3:GetObject, explicit denies in the bucket policy or missing permissions like ListBucket can cause access issues.
+
+22. How would you enforce MFA for console login?
+I would create an IAM policy that denies all actions unless MFA is present and attach it to users or groups. This ensures users can only access the console after completing MFA authentication.
+
+23. How can you allow EC2 to access S3 with least privilege?
+I’d attach an IAM role to the EC2 instance with a policy that grants only the required S3 actions on specific resources, such as s3:GetObject for a particular bucket or folder, following the principle of least privilege.
+
+24. How to audit all users who haven't rotated access keys in 180 days?
+I’d use IAM Credential Report or AWS Config to list all users and check the age of their access keys. Then I would enforce rotation via alerts or automation.
+
+25. You want to allow read-only access to a specific S3 folder for interns—how?
+I would create a custom IAM policy with s3:GetObject on that folder path (e.g., arn:aws:s3:::bucket/folder/*) and attach it to an IAM group assigned to interns.
+
+26. A user has too many permissions—how to safely reduce them?
+I’d use IAM Access Analyzer or CloudTrail logs to determine which permissions are unused. Then I would refine the policy and remove excessive access safely, possibly in stages.
+
+27. How to prevent users from deleting CloudTrail logs?
+I’d apply a bucket policy denying s3:DeleteObject to all users except specific admin roles. Also, I’d enforce this through an IAM policy or SCP in AWS Organizations.
+
+28. You want to give Lambda access to DynamoDB and nothing else—how?
+I’d create an IAM role for Lambda with a policy granting access only to the required DynamoDB table actions like GetItem or PutItem, and then attach that role to the Lambda function.
+
+29. You need to apply permission boundaries to limit IAM policies—how?
+I’d define a permission boundary policy that restricts the maximum permissions a user or role can have and attach it when creating new IAM roles or users, ensuring enforced boundaries.
+
+30. What’s the difference between a role and a user in IAM?
+An IAM user is a long-term identity tied to a specific person, whereas a role is a temporary identity assumed by trusted entities like EC2, Lambda, or users needing elevated access temporarily.
+RDS (Relational Database Service)
+
+31. A developer accidentally dropped a table—how do you recover it?
+If automated backups or manual snapshots are enabled, I’d restore the RDS snapshot to a new instance and retrieve the table data manually or through a dump and restore process.
+
+32. RDS CPU is spiking—how do you troubleshoot?
+I’d check CloudWatch metrics, enhanced monitoring, and Performance Insights to identify long-running queries or resource bottlenecks. Then I'd tune queries or scale the instance if needed.
+
+33. You need to connect an on-prem app to RDS—how?
+I’d set up a VPN or Direct Connect between the on-prem environment and the VPC where RDS resides, ensuring proper security group rules and subnet routing.
+
+34. You want high availability for an RDS instance—what options are available?
+I’d enable Multi-AZ deployment to automatically failover in case of a zone failure. For read scalability, I’d also consider creating Read Replicas.
+
+35. How do you automate RDS backups and retention policies?
+I’d configure the automated backup settings with the desired retention period (up to 35 days) or schedule snapshots via AWS Backup or Lambda.
+
+36. How do you enable encryption for RDS?
+RDS encryption is enabled at the time of instance creation. I’d use a KMS key to encrypt the database and ensure snapshots and backups are also encrypted.
+
+37. You want to scale RDS reads—what’s the best approach?
+I’d create one or more Read Replicas and configure applications to send read traffic to these replicas, balancing the load.
+
+38. You need to copy an RDS snapshot to another region—how?
+I’d take a snapshot, share or copy it to the destination region using the console or CLI, and restore it there to create a new instance.
+
+39. How do you monitor query performance in RDS?
+I’d enable Performance Insights, review slow query logs, and use CloudWatch for monitoring key performance metrics like CPU, memory, and IOPS.
+
+40. How do you enforce SSL connection to RDS?
+I’d enable the rds.force_ssl parameter in the DB parameter group and provide the SSL certificate to clients to ensure all connections use encryption.
+
+Lambda
+
+41. Lambda function times out—how do you fix it?
+I’d check the function’s timeout setting and increase it if necessary. Then I’d review the logic and dependencies to ensure it completes within the expected time.
+
+42. Lambda needs access to a private RDS—what VPC settings are needed?
+I’d configure the Lambda to run inside the same VPC and subnet as the RDS instance, ensuring correct security group rules and enabling VPC access.
+
+43. How do you trigger Lambda only for .csv uploads to S3?
+I’d create an S3 event notification with a suffix filter for .csv files and configure it to trigger the Lambda function upon object creation.
+
+44. You want to monitor Lambda errors and alert on failures—how?
+I’d use CloudWatch Logs for function logs, CloudWatch Metrics for error counts, and set up an alarm with SNS to notify on failures.
+
+45. How to handle large file processing with Lambda (size > 6MB)?
+I’d use S3 for file storage, have Lambda trigger on object creation, and process the file in chunks. For very large files, I’d consider using Step Functions or AWS Batch.
+
+46. Your Lambda is failing due to permissions—how do you troubleshoot?
+I’d check CloudWatch logs for AccessDenied errors, verify the IAM role’s policy, and ensure the function has permissions for all required resources.
+
+47. You want to run Lambda on a schedule—how to set it up?
+I’d use EventBridge (CloudWatch Events) to create a rule with a cron or rate expression to invoke the Lambda function on a schedule.
+
+48. How do you reduce cold start issues in Lambda?
+I’d use provisioned concurrency to keep functions warm, reduce package size, and avoid VPC networking where possible to improve startup time.
+
+49. Lambda is processing duplicate S3 events—how do you handle idempotency?
+I’d make my function idempotent by using a unique request ID, storing processed keys in a database or cache to prevent reprocessing.
+
+50. How to debug Lambda when logs are not enough?
+I’d enable AWS X-Ray for distributed tracing, which gives insights into execution flow, downstream calls, and performance bottlenecks.
+
+CloudFormation
+
+51. Stack creation failed and rolled back—how to identify the issue?
+I’d check the CloudFormation Events tab to see which resource failed and look for error messages. Logs from dependent services (like Lambda) can also help.
+
+52. How to re-use CloudFormation templates across dev, test, prod?
+I’d use parameters, mappings, and conditionals within the template to make it environment-agnostic and use separate parameter files for each stage.
+
+53. You want to manage complex infrastructure—how to organize templates?
+I’d break the setup into nested stacks or use modular templates for components like networking, compute, and storage, then deploy them in sequence or via StackSets.
+
+54. A resource in the stack was manually deleted—how to fix the drift?
+I’d run a stack drift detection to confirm changes and either re-create the missing resource through CloudFormation or update the stack to bring it back into sync.
+
+55. How do you update a CloudFormation stack with minimal downtime?
+I’d use Change Sets to preview the impact, use rolling updates for EC2 or ECS services, and apply updates during maintenance windows if possible.
+VPC (Virtual Private Cloud)
+
+56. You want to connect two VPCs privately—what options are there?
+I’d use VPC Peering for simple setups or Transit Gateway for managing multiple VPCs. Both allow private IP communication, with Transit Gateway being more scalable.
+
+57. EC2 can't access the internet—what networking issues could cause this?
+I’d check if the instance is in a public subnet with a route to an Internet Gateway and if the security group and NACL allow outbound traffic on port 80/443.
+
+58. You need a private subnet that can access S3—how to set it up?
+I’d use a VPC Endpoint for S3, which allows private communication between the subnet and S3 without going over the internet.
+
+59. How do you set up NAT Gateway and why?
+I’d create a NAT Gateway in a public subnet and update the route table of private subnets to send traffic through it, allowing instances to access the internet securely.
+
+60. You want to monitor VPC traffic for security auditing—what can you use?
+I’d enable VPC Flow Logs to capture network traffic metadata, which can be stored in CloudWatch or S3 for analysis and alerting.
+
+Lightsail
+
+61. You need a quick WordPress server—why choose Lightsail over EC2?
+Lightsail offers a pre-configured WordPress image, fixed pricing, and simplified management, making it ideal for quick deployments without deep AWS knowledge.
+
+62. How do you take and restore a snapshot in Lightsail?
+I’d create a manual or scheduled snapshot via the Lightsail console and restore it by launching a new instance from that snapshot if needed.
+
+63. You want to move Lightsail to EC2 for more control—how?
+I’d take a snapshot, export it to EC2 via the console, then use the resulting AMI to launch a fully customizable EC2 instance.
+
+64. Lightsail instance is slow—how to monitor and scale it?
+I’d check the built-in metrics for CPU, memory, and network. If it’s consistently maxing out, I’d either upgrade the plan or migrate to EC2 for better scaling options.
