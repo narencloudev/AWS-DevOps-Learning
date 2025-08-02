@@ -220,8 +220,3 @@ docker ps
 * Use NGINX reverse proxy
 * SSL with Let's Encrypt
 * Add automated tests before build
-
-```
-
-Let me know if you want this saved as a downloadable file too.
-```
