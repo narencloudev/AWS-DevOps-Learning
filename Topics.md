@@ -102,6 +102,149 @@ Perfect for when you’re away from your laptop.
 - Difference between **CloudWatch** and **CloudTrail**.
 - Example of automating tasks with AWS CLI.
 
+
+# Docker & Jenkins – Theory + Interview Preparation Plan
+
+This guide provides a **7-day high-level theory roadmap** for both **Docker** and **Jenkins** to help in interviews and practical understanding.
+
+---
+
+## 📦 Week 2 – Docker
+
+### **Day 1 – Docker Fundamentals**
+- **Theory:** Difference between containers and virtual machines, Docker architecture (Client, Daemon, Registry, Images, Containers).
+- **Interview Focus:**
+  - What problem does Docker solve compared to VMs?
+  - Explain Docker architecture.
+  - What is the role of Docker Hub?
+
+---
+
+### **Day 2 – Docker Images & Containers**
+- **Theory:** Image layers, base images, creating containers, starting/stopping/removing containers.
+- **Interview Focus:**
+  - Difference between an image and a container.
+  - What happens when you run `docker run`?
+  - How are images stored locally?
+
+---
+
+### **Day 3 – Dockerfile Mastery**
+- **Theory:** Writing Dockerfiles, build context, `.dockerignore`, multi-stage builds, build optimizations.
+- **Interview Focus:**
+  - Common Dockerfile instructions (`FROM`, `RUN`, `COPY`, `CMD`).
+  - Multi-stage build benefits.
+  - Why use `.dockerignore`?
+
+---
+
+### **Day 4 – Docker Networking & Storage**
+- **Theory:** Bridge, host, overlay networks, port mapping, volumes vs bind mounts, persistent data.
+- **Interview Focus:**
+  - Difference between bridge and host networks.
+  - How to persist container data?
+  - Port mapping syntax in `docker run`.
+
+---
+
+### **Day 5 – Docker Compose**
+- **Theory:** Multi-container applications, `docker-compose.yml` syntax, `up`/`down` commands, service scaling.
+- **Interview Focus:**
+  - Why use Docker Compose?
+  - Explain `depends_on` and scaling services.
+  - How to override variables in Compose?
+
+---
+
+### **Day 6 – Docker Orchestration Basics**
+- **Theory:** Docker Swarm overview, services, scaling, Kubernetes comparison.
+- **Interview Focus:**
+  - Difference between Docker Swarm and Kubernetes.
+  - How to scale containers?
+  - What is a Docker service?
+
+---
+
+### **Day 7 – Docker Security & Troubleshooting**
+- **Theory:** Managing secrets, setting resource limits, debugging (`docker logs`, `docker exec`, `inspect`).
+- **Interview Focus:**
+  - How to pass secrets securely?
+  - Difference between `exec` and `attach`.
+  - How to check container resource usage?
+
+---
+
+## ⚙️ Week 3 – Jenkins
+
+### **Day 1 – Jenkins Overview**
+- **Theory:** CI/CD concepts, Jenkins architecture (Master/Controller, Agents/Nodes), pipeline basics.
+- **Interview Focus:**
+  - What is CI/CD?
+  - How does Jenkins architecture work?
+  - Difference between Master and Agent.
+
+---
+
+### **Day 2 – Jenkins Jobs & Pipelines**
+- **Theory:** Freestyle jobs vs Pipelines, Jenkinsfile basics, scripted vs declarative pipelines.
+- **Interview Focus:**
+  - When to use a Freestyle job vs a Pipeline.
+  - Difference between declarative and scripted pipeline.
+  - Location and syntax of Jenkinsfile.
+
+---
+
+### **Day 3 – Pipeline Stages**
+- **Theory:** Defining `stages` and `steps`, post actions, conditional execution, parallel stages.
+- **Interview Focus:**
+  - How to define multiple stages in Jenkinsfile.
+  - Purpose of `post` section.
+  - How to run jobs in parallel?
+
+---
+
+### **Day 4 – Plugins & Integration**
+- **Theory:** Installing plugins, integrating with Git, Docker, Slack, SonarQube.
+- **Interview Focus:**
+  - How to install and update plugins.
+  - Jenkins–Git integration steps.
+  - Common plugins you’ve used.
+
+---
+
+### **Day 5 – Agents & Distributed Builds**
+- **Theory:** Static/dynamic agents, connecting agents via SSH/JNLP, Docker-based agents.
+- **Interview Focus:**
+  - Why use multiple agents?
+  - Difference between static and dynamic agents.
+  - Setting up a Docker agent in Jenkins.
+
+---
+
+### **Day 6 – Security & Credentials**
+- **Theory:** Authentication, RBAC, storing credentials securely, secret text vs SSH key.
+- **Interview Focus:**
+  - How to manage credentials in Jenkins.
+  - Role-based access control setup.
+  - Storing SSH keys securely.
+
+---
+
+### **Day 7 – Maintenance & Best Practices**
+- **Theory:** Backup strategies, Jenkins upgrades, performance tuning, troubleshooting failed builds.
+- **Interview Focus:**
+  - How to back up Jenkins.
+  - Common reasons for build failures.
+  - Jenkins performance optimization tips.
+
+---
+
+## 📚 Notes
+- Each day covers **theory first** followed by **common interview questions**.
+- Revise previous topics before moving to the next day.
+- Keep a **personal knowledge log** of your answers.
+
+
 ---
 
 ## 🎯 **Interview Q&A Flashcards**
