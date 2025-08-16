@@ -706,3 +706,56 @@ Commit to consistent usage for lower rates.
 
 ---
 
+# 📌 AWS + Docker + Jenkins – 3 Week Study Tracker
+
+Use this tracker to follow along daily. Mark each topic as ✅ when completed.  
+Once all topics are done → move to **Revision + Job Prep** phase.
+
+---
+
+## 📒 Week 1 – AWS (Theory + Interview Prep)
+
+- [ ] **Day 1:** AWS Global Infrastructure (Regions, AZs, Edge Locations)  
+- [ ] **Day 2:** VPC Networking (Subnets, Route Tables, IGW, NAT)  
+- [ ] **Day 3:** EC2 Deep Dive (Instance Types, AMI, EBS, Security Groups)  
+- [ ] **Day 4:** Load Balancing & Auto Scaling (ELB, Target Groups, ASG)  
+- [ ] **Day 5:** IAM & Security (Users, Roles, Policies, STS)  
+- [ ] **Day 6:** S3 & Storage (Buckets, Versioning, Lifecycle, Glacier)  
+- [ ] **Day 7:** RDS & Databases (RDS, Aurora, DynamoDB, Caching)
+
+---
+
+## 📒 Week 2 – Docker (Theory + Interview Prep)
+
+- [ ] **Day 1:** Docker Fundamentals (Architecture, VM vs Container, Registries)  
+- [ ] **Day 2:** Images & Containers (Build, Run, Inspect, Lifecycle)  
+- [ ] **Day 3:** Dockerfile (Instructions, Multi-stage Builds, `.dockerignore`)  
+- [ ] **Day 4:** Networking & Storage (Bridge, Host, Volumes, Persistence)  
+- [ ] **Day 5:** Docker Compose (Multi-container apps, Scaling, Overrides)  
+- [ ] **Day 6:** Orchestration (Swarm basics, Services, Scaling, Kubernetes intro)  
+- [ ] **Day 7:** Security & Troubleshooting (Secrets, Logs, Resource Limits)
+
+---
+
+## 📒 Week 3 – Jenkins (Theory + Interview Prep)
+
+- [ ] **Day 1:** Jenkins Overview (CI/CD concepts, Architecture)  
+- [ ] **Day 2:** Jobs & Pipelines (Freestyle vs Pipelines, Jenkinsfile basics)  
+- [ ] **Day 3:** Pipeline Stages (Steps, Post actions, Parallel execution)  
+- [ ] **Day 4:** Plugins & Integrations (Git, Docker, Slack, SonarQube)  
+- [ ] **Day 5:** Agents & Distributed Builds (Static, Dynamic, Docker agents)  
+- [ ] **Day 6:** Security & Credentials (RBAC, Secret Storage, SSH Keys)  
+- [ ] **Day 7:** Maintenance & Best Practices (Backup, Upgrades, Troubleshooting)
+
+---
+
+## 🚀 Next Steps After 3 Weeks
+
+- [ ] **Revise Key Topics** (AWS + Docker + Jenkins)  
+- [ ] **Mock Interviews** (Scenario-based Q&A)  
+- [ ] **Resume Update** (Highlight projects + AWS/Docker/Jenkins skills)  
+- [ ] **Job Applications** (Start applying + LinkedIn/GitHub updates)  
+
+---
+
+✅ Tip: Commit this file into your GitHub as `STUDY_TRACKER.md` and update daily.  
